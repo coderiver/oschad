@@ -1408,6 +1408,10 @@ Main Components
 	-webkit-transition: -webkit-transform 0.5s 0s, visibility 0s 0.5s;
 	-moz-transition: -moz-transform 0.5s 0s, visibility 0s 0.5s;
 	transition: transform 0.5s 0s, visibility 0s 0.5s;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
 }
 .inline-nav-content > li.has-children:hover {
   /*visibility: visible;*/
@@ -1472,6 +1476,17 @@ Main Components
 	-webkit-transition: -webkit-transform 0.4s;
 	-moz-transition: -moz-transform 0.4s;
 	transition: transform 0.4s;
+	-webkit-transition-property: all;
+	-moz-transition-property: all;
+	-ms-transition-property: all;
+	-o-transition-property: all;
+	transition-property: all;
+	-webkit-transition-duration: 300ms;
+	-moz-transition-duration: 300ms;
+	-ms-transition-duration: 300ms;
+	-o-transition-duration: 300ms;
+	transition-duration: 300ms;
+
 }
 
 .inline-nav-content > li:hover > ul {
