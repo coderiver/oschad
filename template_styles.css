@@ -2958,8 +2958,10 @@ a{
 .card-preview-md { padding: 2.25rem 0 4rem;}
 .card-preview-md.green {color: #ffffff; background-color: #6cc195;}
 .card-preview-md > a { display: block; background-color: transparent; color: inherit;}
-.card-preview-title { font-size: 3rem; line-height: 1.2; color: inherit; text-transform: lowercase; margin-bottom: 1rem;}
-.card-preview-title .label { display: block; font-size: .875rem; font-weight: 300; line-height: 1; text-transform:none; opacity: .5; }
+.card-preview-title { font-size: 3rem; line-height: 1.2; color: inherit; text-transform: lowercase; margin-bottom: 1rem; -webkit-transition: all .5s; transition: all .5s; }
+.card-preview-title:hover { color: #dcdf3c; }
+.card-preview-title:hover .laber { color: #fff; }
+.card-preview-title .label {color: #fff; display: block; font-size: .875rem; font-weight: 300; line-height: 1; text-transform:none; opacity: .5; }
 .card-preview-md .card-preview-content ul { padding-left: 0; list-style: none;}
 .card-preview-md .card-preview-content ul > li::before { content: ""; width: 10px; height: 2px; background-color: #dcdf3c; position: absolute; top: .75rem; left: -1.25rem;}
 .card-preview-md .card-preview-content ul > li { position: relative; /*padding-left: 1.25rem;*/ margin-bottom: 1rem;}
@@ -2988,8 +2990,10 @@ a{
 .section-cards-list.special .section-content { background-color: #f1f5fa;}
 .list-cards > li { margin-top: 2.25rem; margin-bottom: 2.25rem}
 .card-item-inner > a { display: block; background-color: transparent; color: inherit;}
-.card-item-title {font-size: 3rem; line-height: 1.2; font-weight: 600; color: inherit; text-transform: lowercase; margin-bottom: 1rem;}
-.card-item-title .label { display: block; font-size: .875rem; font-weight: 300; line-height: 1; text-transform:none; opacity: .5; }
+.card-item-title { font-size: 3rem; line-height: 1.2; font-weight: 600; color: inherit; text-transform: lowercase; margin-bottom: 1rem; -webkit-transition: all .5s; transition: all .5s; }
+.card-item-title:hover { color: #dcdf3c; }
+.card-item-title:hover .label { color: #000; }
+.card-item-title .label { color: #000; display: block; font-size: .875rem; font-weight: 300; line-height: 1; text-transform:none; opacity: .5; }
 .card-item-content { padding-bottom: .5rem;}
 .card-item-content ul { padding-left: 0; list-style: none;}
 .card-item-content ul > li::before { content: ""; width: 10px; height: 2px; background-color: #212628; position: absolute; top: .75rem; left: 0;}
@@ -3181,7 +3185,8 @@ a.current-tp .icon { display: inline-block; width: 24px; height: 24px; position:
 	.advertising-item .adv-info { width: 50%;}
 	.advertising-item { min-height: 300px;}
 }
-.advertising-item .adv-title { display: block; font-size: 2.25rem; font-weight: 600; text-transform: lowercase; margin-bottom: 2.25rem; line-height: 1.2;}
+.advertising-item .adv-title { display: block; font-size: 2.25rem; font-weight: 600; text-transform: lowercase; margin-bottom: 2.25rem; line-height: 1.2; -webkit-transition: all .5s;  transition: all .5s;}
+.advertising-item .adv-title:hover { color: #dcdf3c; }
 .advertising-item .adv-content p:last-child { margin-bottom: 0;}
 .advertising-item .adv-img { text-align: center; position: absolute; bottom: 0; right: -80px; }
 .advertising-item .adv-img img { display: inline-block; max-width: 100%;}
