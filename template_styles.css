@@ -4029,7 +4029,7 @@ a.current-tp .icon { display: inline-block; width: 24px; height: 24px; position:
 @media (min-width:1100px){
 	.footer-widget-content { padding-right: 1rem;}
 	.social-links a {width: 28px; height: 28px; }
-	.social-links a .icon {background-size: 16px 16px;}
+	.social-links a .icon {background-size: 28px 28px;}
 }
 .copyright,
 .copyright span { color: #585b5c;}
