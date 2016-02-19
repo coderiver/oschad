@@ -290,7 +290,7 @@ table p { margin-bottom: 0;}
 .blue .form-label { color: #7196db;}
 
 .form-group { position: relative; margin-bottom: 1.5rem;}
-.form-control-label { display: block; max-width: 100%; font-size: 20px; font-weight: 400; color: #000000; margin-bottom: 0; cursor: text; position: absolute; top: 9px; left: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; -webkit-transition: top 0.2s ease 0s, left 0.2s ease 0s, font-size 0.2s ease 0s; -moz-transition: top 0.2s ease 0s, left 0.2s ease 0s, font-size 0.2s ease 0s; transition: top 0.2s ease 0s, left 0.2s ease 0s, font-size 0.2s ease 0s; }
+.form-control-label { display: block; max-width: 100%; font-size: 20px; font-weight: 400; color: #000000; margin-bottom: 0; cursor: text; position: absolute; top: 9px; left: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; -webkit-transition: transform 0.4s; -moz-transition: transform 0.4s; -ms-transition: transform 0.4s; -o-transition: transform 0.4s; transition: transform 0.4s; /* -webkit-transition: top 0.2s ease 0s, left 0.2s ease 0s, font-size 0.2s ease 0s; -moz-transition: top 0.2s ease 0s, left 0.2s ease 0s, font-size 0.2s ease 0s; transition: top 0.2s ease 0s, left 0.2s ease 0s, font-size 0.2s ease 0s; */ }
 .form-row .form-control-label {left: 24px;}
 .sky-blue .form-control-label { color: #ffffff;}
 .light-blue .form-control-label.float { opacity: .5; }
@@ -303,7 +303,7 @@ table p { margin-bottom: 0;}
 @media only screen and (min-width: 1100px) {
 	.form-group { margin-bottom: 1rem;}
 	.form-control-label { max-width: none;}		
-	.form-control-label.float { width: 200px; text-align: right; left: -214px; top: 14px; }
+	.form-control-label.float { width: 200px; text-align: right; left: -204px; top: 14px; -webkit-transform: translate3d(-10px, 0, 0); -moz-transform: translate3d(-10px, 0, 0); -ms-transform: translate3d(-10px, 0, 0); -o-transform: translate3d(-10px, 0, 0); transform: translate3d(-10px, 0, 0); }
 	.form-row .form-control-label.float.top {left: .625rem;}
 	.form-control-label.float.top { width: auto; text-align: left; left: 0; top: -20px; }
 	.label-touch { display: none;}
