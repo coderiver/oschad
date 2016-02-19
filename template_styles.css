@@ -2302,7 +2302,7 @@ body::before { display: none; content: 'mobile';}
 	.no-touch body.side-nav-is-open .site-overlay { opacity: 1; visibility: visible; -webkit-transition: opacity 0.3s 0s, visibility 0s 0s, -webkit-transform 0.3s 0s; -moz-transition: opacity 0.3s 0s, visibility 0s 0s, -moz-transform 0.3s 0s; transition: opacity 0.3s 0s, visibility 0s 0s, transform 0.3s 0s; }
 	
 	body.side-nav-is-open { position: relative;}
-	.site-container { margin-right: 50px; -webkit-transition: all 0.5s 0s; -moz-transition: all 0.5s 0s; transition: all 0.5s 0s; /*padding-right: 1.25rem;*/}
+	.site-container { margin-right: 50px; -webkit-transition: all 0.5s 0s; -moz-transition: all 0.5s 0s; -ms-transition: all 0.5s 0s; -o-transition: all 0.5s 0s; transition: all 0.5s 0s;  /*padding-right: 1.25rem;*/}
 	.side-nav-is-open .site-container { margin-right: 240px;}	
 	.main,
 	.top-bar,
@@ -2315,7 +2315,7 @@ body::before { display: none; content: 'mobile';}
 	
 }
 
-.side-nav { position: fixed; z-index: 3; right: 0; top: 0; width: 50px; background-color: #212628; height: 100%; max-height: none; overflow-x: hidden; overflow-y: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-transition: width 0.5s 0s; -moz-transition: width 0.5s 0s; transition: width 0.5s 0s;}
+.side-nav { position: fixed; z-index: 3; right: 0; top: 0; width: 50px; background-color: #212628; height: 100%; max-height: none; overflow-x: hidden; overflow-y: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-transition: width 0.5s 0s; -moz-transition: width 0.5s 0s; transition: width 0.5s 0s; -ms-transition: width 0.5s 0s; -o-transition: width 0.5s 0s; }
 .side-nav-is-open .side-nav { width: 240px; overflow-y: auto; }
 
 .side-nav > ul { padding: 0.5rem 0; padding-left: 0; list-style: none; margin-bottom: 0;}
@@ -2696,7 +2696,34 @@ a.slide-container { color: inherit; text-decoration: none; background-color: tra
 	.slide-img-bg img { top: 50%; left: 50%; -webkit-transform: translate(-50%,-50%); -moz-transform: translate(-50%,-50%); -o-transform: translate(-50%,-50%); -ms-transform: translate(-50%,-50%); transform: translate(-50%,-50%); }
 }
 
-.main-slider .slick-dots { padding-left: 0; margin-bottom: 0; list-style: none; position: absolute; right: 1rem; top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -o-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); z-index: 3;}
+@media only screen and (min-width: 660px) and (max-width: 767px){
+	.slide-item-inner > .container { width: 540px; }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 980px){
+	.slide-item-inner > .container { width: 768px; }
+	.slide-item-inner { height: 39.25rem; }
+	.slide-container {padding: 5.5rem 25% 6.5rem 0;}
+	.slide-title { font-size: 4rem;}
+	.slide-description { width: 75%;}
+	.slide-features { display: block;}
+	.slide-img { max-width: 50%; max-height: none;}
+	.slide-action a { width: auto;}
+	.slide-img-bg img { top: 50%; left: 50%; -webkit-transform: translate(-50%,-50%); -moz-transform: translate(-50%,-50%); -o-transform: translate(-50%,-50%); -ms-transform: translate(-50%,-50%); transform: translate(-50%,-50%); }
+}
+
+@media only screen and (min-width: 981px) and (max-width: 1099px){
+	.slide-item-inner > .container { width: 960px }
+	.slide-container {padding: 5.5rem 25% 6.5rem 0;}
+	.slide-title { font-size: 6rem;}
+	.slide-description { width: 75%;}
+	.slide-features { display: block;}
+	.slide-img { max-width: 50%; max-height: none;}
+	.slide-action a { width: auto;}
+	.slide-img-bg img { top: 50%; left: 50%; -webkit-transform: translate(-50%,-50%); -moz-transform: translate(-50%,-50%); -o-transform: translate(-50%,-50%); -ms-transform: translate(-50%,-50%); transform: translate(-50%,-50%); }
+}
+
+.main-slider .slick-dots { padding-left: 0; margin-bottom: 0; list-style: none; position: absolute; left: 50%; top: 88%; z-index: 3; -webkit-transform: rotate(90deg); -moz-transform: rotate(90deg); -ms-transform: rotate(90deg); -o-transform: rotate(90deg); transform: rotate(90deg); }
 .main-slider .slick-dots > li { margin-bottom: 6px; height: 40px; width: 10px; position: relative;}
 .main-slider .slick-dots > li:last-child { margin-bottom: 0;}
 .main-slider .slick-dots > li button { display: block; width: 2px; height: 100%; padding: 0; background-color: #fff; background-color: rgba(255,255,255,.4); overflow: hidden; text-indent: 100%; color: transparent; background-image: none; border: none; position: absolute; top: 0; right: 0;}
