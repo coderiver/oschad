@@ -33,13 +33,13 @@ html{-webkit-box-sizing:border-box;box-sizing:border-box;font-size:16px;-webkit-
 /*@media (min-width: 680px){.container{width: calc(90% - 40px);}}*/
 
 .container{width: calc(90% - 40px);}
-@media (min-width: 768px){.container{width:540px} }
-/*
-@media (min-width: 1100px){.container{max-width:960px}}
-@media (min-width: 1200px){.container{max-width:1180px}}
-*/
-@media (min-width: 1100px){.container{width:960px}}
 @media (min-width: 1440px){.container{width:1100px}}
+@media (min-width: 1160px){.container{width:940px}}
+
+/*@media (min-width: 980px){.container{width:768px}}*/
+/*@media (min-width: 660px){.container{width:100%} }*/
+/*@media (min-width: 1100px){.container{max-width:960px}}*/
+/*@media (min-width: 1200px){.container{max-width:1180px}}*/
 
 .row{margin-right:-.625rem;margin-left:-.625rem}.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-13,.col-lg-14,.col-lg-15,.col-lg-16,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-13,.col-md-14,.col-md-15,.col-md-16,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-13,.col-sm-14,.col-sm-15,.col-sm-16,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-xl-1,.col-xl-10,.col-xl-11,.col-xl-12,.col-xl-13,.col-xl-14,.col-xl-15,.col-xl-16,.col-xl-2,.col-xl-3,.col-xl-4,.col-xl-5,.col-xl-6,.col-xl-7,.col-xl-8,.col-xl-9,.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-13,.col-xs-14,.col-xs-15,.col-xs-16,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.one-third-xs,.one-third-sm,.one-third-md,.one-third-lg,.one-third-xl,.two-third-xs,.two-third-sm,.two-third-md,.two-third-lg,.two-third-xl,.one-fifth-xs,.one-fifth-sm,.one-fifth-md,.one-fifth-lg,.one-fifth-xl{position:relative;min-height:1px;padding-right:.625rem;padding-left:.625rem}
 
@@ -2241,11 +2241,11 @@ a.dropdown-trigger:active {background-color: transparent;}
 .site-logo img { max-width: 100%;}
 .site-logo a { width: 100%; background-color: transparent; position: absolute; top: 22px; left: -22px; z-index: 1;}
 
-@media (min-width:404px){
+/*@media (min-width:601px){
 	.site-header { height: 100px; }
 	.site-logo { width: 404px; }
 	.site-logo a { top: 21px; left: -32px;}
-}
+}*/
 @media (min-width:1100px){	
 	.site-header { height: 72px; padding-right: 1.25rem;}
 	.site-logo { float: left; width: 210px;}
@@ -4034,6 +4034,12 @@ a.current-tp .icon { display: inline-block; width: 24px; height: 24px; position:
 .copyright,
 .copyright span { color: #585b5c;}
 .copyright { font-size: .6875rem;}
+
+@media ( min-width: 768px ) {
+	.footer-widgets-container .col-md-5 { width: 31.25%; float: left; }
+	.footer-widgets-container .col-md-6 { width: 37.5%; float: left; }
+	}
+}
 
 /*=======================
  404 ERROR
