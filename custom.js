@@ -488,7 +488,7 @@ localStorage['FSize']=10;
 				//mobileFirst: true,	
 				responsive: [
 					{
-						breakpoint: 1100,
+						breakpoint: 1099,
 						settings: {							
 							dots: false,
 							fade: false,
@@ -656,7 +656,7 @@ localStorage['FSize']=10;
 				} else if( top - margin + height <= $(window).scrollTop()) {					
 					var delta = top - margin + height - $(window).scrollTop();
 					creditFormContainer.css({
-						'top': margin + 84,
+						//'top': margin + 84,
 						'-moz-transform': 'translateZ(0) translateY('+delta+'px)',
 						'-webkit-transform': 'translateZ(0) translateY('+delta+'px)',
 						'-ms-transform': 'translateZ(0) translateY('+delta+'px)',
