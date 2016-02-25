@@ -470,7 +470,7 @@ localStorage['FSize']=10;
 	
 	/*sliders*/
 	function custom_sliders() {
-		
+
 		if($('.main-slider').exists()) {
 			$('.main-slider').slick({
 				//lazyLoad: 'progressive',
@@ -478,31 +478,31 @@ localStorage['FSize']=10;
 				infinite: true,
 				autoplay: true,
 				autoplaySpeed: 5000,
-				speed: 500,
+				speed: 1200,
 				arrows: false,
 				dots: true,
-				fade: true,
-				cssEase: 'linear',		
+				fade: false,
+				//cssEase: 'linear',
 				slidesToShow: 1,
 				slidesToScroll: 1,
-				//mobileFirst: true,	
+				//mobileFirst: true,
 				responsive: [
 					{
 						breakpoint: 1099,
-						settings: {							
+						settings: {
 							dots: false,
 							fade: false,
 						}
-					},					
+					},
 					// You can unslick at a given breakpoint now by adding:
 					// settings: "unslick"
 					// instead of a settings object
-				]			
-			});						
+				]
+			});
 		}
-		
-		
-		
+
+
+
 		if($('.sync-slider-for').exists()) {
 			$('.sync-slider-for').slick({
 				//lazyLoad: 'progressive',

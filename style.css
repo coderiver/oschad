@@ -1,0 +1,99 @@
+.filter-departments label[for="autocomplete"] {
+    font-size: 17px;
+    top: 12px;
+    font-weight: 600;
+}
+@media (min-width: 1100px){
+	.floating-labels{
+		width: 37%;
+		float: left;
+	}
+}
+
+.pac-item::before { content: ""; width: 0; height: 100%; background-color: #168CBA; display: block; position: absolute; left: 0; top: 0; z-index: -1; -webkit-transition: width 0.3s ease 0s; -moz-transition: width 0.3s ease 0s; -o-transition: width 0.3s ease 0s; -ms-transition: width 0.3s ease 0s; transition: width 0.3s ease 0s; }
+.pac-item:hover::before { width: 100%; }
+.pac-item:hover { background:#3BA6D2; cursor:pointer; }
+.pac-item>*{color:white;	font-family: 'FuturaPT-Demi';
+    font-weight: normal;
+    font-style: normal;
+	font-size: 20px;
+    line-height: 1.5;}
+.pac-logo:after {background-color:#3BA6D2;}
+.pac-item{
+	position:relative;
+	background: #3ba6d2;
+    border-color: #3ba6d2;
+	display: block;
+    list-style: none;
+    margin: 0px;
+    width: calc(100% + 4px);
+    left: -2px;
+    right: 0;
+	color:white;
+    overflow-y: auto;
+    z-index: 3;
+    box-shadow: 0 0 0;
+	padding: 10px 10px;
+	font-family: 'FuturaPT-Demi';
+    font-weight: normal;
+    font-style: normal;
+	font-size: 20px;
+    line-height: 1.5;
+}
+.form-alert.alert-info {
+    display: none;
+}
+.map-department{
+	width:100%!important;
+}
+.zone24{background:#42a7d1;}
+.kiosk{background:#0b9874;}
+.tultip{width:120px!important; padding:3px 3px 3px 30px!important; margin:0px!important; display:inline-block;height:43px!important;}
+.gm-style-iw {
+    margin: 0;
+    padding: 0;
+    width: 250px!important;
+	top:130px!important;
+	left: 19px!important;
+}
+/*.mapWindowBot{
+	background:url(/images/mapWindowBot.png);
+	height:12px;
+	width:100%;
+}*/
+.map-department-header{
+    background-image: url(/img/o_icon.png);
+    background-position: 5% 45%;
+    background-repeat: no-repeat;
+}
+#tooltip{
+    display: none;
+    position:absolute;
+    background-color: #ccc;
+    margin: 15px;
+}
+.infowindow{
+width:400px;
+background:white;
+}
+.windHead{
+color:white;
+background:#03503C;
+padding:10px 10px 10px 40px;
+}
+.closeInfo{
+float:right;
+}
+
+div.news-list
+{
+	word-wrap: break-word;
+}
+div.news-list img.preview_picture
+{
+	float:left;
+	margin:0 4px 6px 0;
+}
+.news-date-time {
+	color:#486DAA;
+}
