@@ -478,17 +478,17 @@ localStorage['FSize']=10;
 				infinite: true,
 				autoplay: true,
 				autoplaySpeed: 5000,
-				speed: 1200,
+				speed: 800,
 				arrows: false,
 				dots: true,
 				fade: false,
-				//cssEase: 'linear',
+				cssEase: 'linear',
 				slidesToShow: 1,
 				slidesToScroll: 1,
 				//mobileFirst: true,
 				responsive: [
 					{
-						breakpoint: 1099,
+						breakpoint: 1100,
 						settings: {
 							dots: false,
 							fade: false,
