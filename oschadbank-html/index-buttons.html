@@ -713,10 +713,84 @@
                             </div> <!--end .map-department-info-->
                             
                         </div> <!--end .map-department-->
-                        
-                        
-                        
-                        
+
+
+                     
+                        <div style="margin: 1.5rem 0;">
+                            <style>
+                                .on-map {
+                                    box-sizing: border-box;
+                                    display: inline-block;
+                                    position: relative;
+                                    width: 65px;
+                                    height: 27px;
+                                    line-height: 27px;
+                                    text-align: center;
+                                    background-color: transparent;
+                                    border: 1px solid #6dbdde;
+                                    border-bottom: none;
+                                    color: #6dbdde;
+                                    font-size: 12px;
+                                    -webkit-transition: none;
+                                    -moz-transition: none;
+                                    -ms-transition: none;
+                                    -o-transition: none;
+                                    transition: none;
+                                }
+                                .on-map span {
+                                    content: '';
+                                    display: inline-block;
+                                    position: absolute;
+                                    right: 0;
+                                    bottom: 0;
+                                    height: 1px;
+                                    width: 57px;
+                                    background-color: #6dbdde;
+                                }
+
+                                .on-map::after {
+                                    content: '';
+                                    position: absolute;
+                                    bottom: -3px;
+                                    left: -1px;
+                                    display: block;
+                                    border: 1px solid #6dbdde;
+                                    border-top: none;
+                                    border-right: none;
+                                    width: 7px;
+                                    height: 10px;
+                                    -webkit-transform: skew(0deg, -42deg);
+                                    -moz-transform: skew(0deg, -42deg);
+                                    -ms-transform: skew(0deg, -42deg);
+                                    -o-transform: skew(0deg, -42deg);
+                                    transform: skew(0deg, -42deg);
+                                }
+
+                                .on-map:hover {
+                                    color: #fff;
+                                    background-color: #6dbdde;
+                                }
+
+                                .on-map:hover::after {
+                                    background-color: #6dbdde;
+                                }
+
+                                .on-map:focus {
+                                    background-color: transparent;
+                                    text-decoration: none;
+                                    color: #6dbdde;
+                                }
+                                .on-map:visited {
+                                    background-color: transparent;
+                                }
+                            </style>
+
+                            <a href="#" class="on-map">
+                                На мапі
+                                <span></span>
+                            </a>
+                        </div>
+
                         
                         
                         

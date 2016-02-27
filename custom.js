@@ -478,7 +478,7 @@ localStorage['FSize']=10;
 				infinite: true,
 				autoplay: true,
 				autoplaySpeed: 5000,
-				speed: 1600,
+				speed: 1200,
 				arrows: false,
 				dots: true,
 				fade: false,
