@@ -3513,7 +3513,7 @@ a.current-tp .icon { display: inline-block; width: 24px; height: 24px; position:
 .credit-fixed-container { position: relative;}
 .credit-fixed-container > .inner-content { float: none; width: 100%; }
 .credit-form-container { z-index: 1;}
-.form-shadow-box { background-color: #ffffff; padding: 1.5rem 1.875rem; margin-bottom: 1.25rem}
+.form-shadow-box { background-color: #ffffff; padding: 1.5rem 1.875rem; /*margin-bottom: 1.25rem*/}
 .form-shadow-box.red { box-shadow: 10px 0 35px rgba(202,72,77,.3);}
 .form-shadow-box.yellow { box-shadow: 10px 0 35px rgba(162,164,38,.3);}
 
@@ -3532,7 +3532,8 @@ a.current-tp .icon { display: inline-block; width: 24px; height: 24px; position:
 	/*.credit-fixed-container > .inner-content { padding-right: 364px; }*/
 	.credit-form-container { float: right; width: 364px; position: absolute; right: 20px; top: -330px; z-index: 1;}
 	.credit-form-container.is-fixed { position: fixed; right: 90px !important;}	
-	.credit-form-container > form { width: auto; max-width: none; }
+	.credit-form-container > form { width: auto; max-width: none; position: relative; }
+	.credit-form-container .btn-wrap { position: absolute; left: 0; right: 0; margin-top: 1.25rem; }
 }
 @media only screen and (min-width: 1280px) {
 	.credit-form-container.is-fixed { right: 280px !important;}		
