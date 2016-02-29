@@ -3079,7 +3079,7 @@ a.current-tp .icon { display: inline-block; width: 24px; height: 24px; position:
 	.filter-view-type-switcher .btn-group a { width: auto;}
 }
 
-.list-departments > li {position: relative; background-color: #ffffff; color: #161a1b; padding: 1.5rem 0 1.25rem; -webkit-transition: background 0.3s; -moz-transition: background 0.3s; -o-transition: background 0.3s; -ms-transition: background 0.3s; transition: background 0.3s;}
+.list-departments > li { cursor: pointer; position: relative; background-color: #ffffff; color: #161a1b; padding: 1.5rem 0 1.25rem; -webkit-transition: background 0.3s; -moz-transition: background 0.3s; -o-transition: background 0.3s; -ms-transition: background 0.3s; transition: background 0.3s;}
 .list-departments > li:nth-child(even) { background-color: #f1f5fa;}
 .list-departments > li.featured {background-color: #ffffff; border: 5px solid #6dbdde; padding: 1.875rem 0 1.25rem;}
 
@@ -3091,8 +3091,10 @@ a.current-tp .icon { display: inline-block; width: 24px; height: 24px; position:
 .touch .department-tel a { display: block; width: 100%; background-color: transparent; border: 2px solid #6dbdde; color: inherit; padding: 0 2.5rem; height: 3rem; line-height: 2.75rem; text-align: center;}
 .no-touch .department-tel a { pointer-events: none; background-color: transparent; color: inherit;}
 
+.department-days-table { display: block; width: 25%; font-size: 14px; }
+
 .department-opening-hours-table { overflow: hidden; opacity: 0; visibility: hidden; height: 0; -webkit-transition: opacity 0.2s ease 0s, visibility 0.2s ease 0s; -moz-transition: opacity 0.2s ease 0s, visibility 0.2s ease 0s; -o-transition: opacity 0.2s ease 0s, visibility 0.2s ease 0s; -ms-transition: opacity 0.2s ease 0s, visibility 0.2s ease 0s; transition: opacity 0.2s ease 0s, visibility 0.2s ease 0s;}
-.department-opening-hours-table.is-visible { opacity: 1; visibility: visible; height: auto; padding-bottom: 1.25rem;}
+.department-opening-hours-table.is-visible { opacity: 1; visibility: visible; height: auto; padding-bottom: 1.25rem; }
 .department-opening-hours > .inner { font-size: .875rem; padding-top: 2rem;}
 .department-opening-hours > .inner > span,
 .department-opening-hours > .inner > a { display: block;}

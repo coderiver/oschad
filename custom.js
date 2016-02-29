@@ -111,10 +111,19 @@ localStorage['FSize']=10;
 				});	
 			}
 		}
-		
-		
-		
-		
+
+		//show department open hours
+		function departmentOpenHours() {
+
+			var phones = $('.list-departments li');
+			phones.each(function (index, el) {
+				$(el).click(function () {
+					$(this).find('.department-opening-hours-table').addClass('is-visible');
+					$(this).find('.department-days-table').hide();
+				})
+			});
+		}
+		departmentOpenHours();
 		
 		
 		//change this breakpoint in the master.css file (body::before)
@@ -463,27 +472,33 @@ localStorage['FSize']=10;
 			}
 		}
 	}
-	
-	
-	
+
 	
 	
 	/*sliders*/
 	function custom_sliders() {
+		$('.main-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+			$('.slide-item').find('.slide-img').addClass('slide-img-active');
+			$('.slide-item').find('.slide-content').addClass('slide-content-active');
+		});
+		$('.main-slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
+			$('.slick-active').find('.slide-img').removeClass('slide-img-active');
+			$('.slick-active').find('.slide-content').removeClass('slide-content-active');
+		});
 
 		if($('.main-slider').exists()) {
 			$('.main-slider').slick({
-				//lazyLoad: 'progressive',
+				lazyLoad: 'ondemand',
 				//adaptiveHeight: true,
 				infinite: true,
 				autoplay: true,
 				autoplaySpeed: 5000,
-				speed: 1200,
 				arrows: false,
 				dots: true,
 				fade: false,
 				//cssEase: 'linear',
-				easing: 'easeOutQuad',
+				easing: 'easeInSine',
+				speed: 1100,
 				slidesToShow: 1,
 				slidesToScroll: 1,
 				//mobileFirst: true,
@@ -501,7 +516,6 @@ localStorage['FSize']=10;
 				]
 			});
 		}
-
 
 
 		if($('.sync-slider-for').exists()) {
@@ -558,8 +572,6 @@ localStorage['FSize']=10;
 		}
 	}
 	
-	
-	
 
 	/*media*/
 	/*Video Preload - YouTube*/
@@ -587,6 +599,7 @@ localStorage['FSize']=10;
 			});
 		}*/
 	//}
+
 	
 	//fixed credit form
 	function custom_credit_form() {

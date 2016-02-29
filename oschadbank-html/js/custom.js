@@ -42,9 +42,6 @@ var $ = jQuery.noConflict();
         return ( mq == 'mobile' ) ? false : true;
     }
 	
-	
-	
-	
 	//dropdown menu
 	function custom_nav_menu() {
 	
@@ -111,9 +108,19 @@ var $ = jQuery.noConflict();
 				});	
 			}
 		}
-		
-		
-		
+
+		//show department open hours
+		function departmentOpenHours() {
+
+			var phones = $('.list-departments li');
+			phones.each(function (index, el) {
+				$(el).click(function () {
+					$(this).find('.department-opening-hours-table').addClass('is-visible');
+					$(this).find('.department-days-table').hide();
+				})
+			});
+		}
+		departmentOpenHours();
 		
 		
 		
