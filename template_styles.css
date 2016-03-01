@@ -292,7 +292,7 @@ table p { margin-bottom: 0;}
 .blue .form-label { color: #7196db;}
 
 .form-group { position: relative; margin-bottom: 1.5rem;}
-.form-control-label { display: block; max-width: 100%; font-size: 20px; font-weight: 400; color: #000000; margin-bottom: 0; cursor: text; position: absolute; top: 9px; left: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; -webkit-transition: transform 250ms linear, font-size 200ms linear; -moz-transition: transform 250ms linear, font-size 200ms linear; -ms-transition: transform 250ms linear, font-size 200ms linear; -o-transition: transform 250ms linear, font-size 200ms linear; transition: transform 250ms linear, font-size 200ms linear; /* -webkit-transition: top 0.2s ease 0s, left 0.2s ease 0s, font-size 0.2s ease 0s; -moz-transition: top 0.2s ease 0s, left 0.2s ease 0s, font-size 0.2s ease 0s; transition: top 0.2s ease 0s, left 0.2s ease 0s, font-size 0.2s ease 0s; */ }
+.form-control-label { display: block; max-width: 100%; font-size: 20px; font-weight: 400; color: #000000; margin-bottom: 0; cursor: text; position: absolute; top: 9px; left: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; -webkit-transition: transform 300ms linear, font-size 300ms linear; -moz-transition: transform 300ms linear, font-size 300ms linear; -ms-transition: transform 300ms linear, font-size 300ms linear; -o-transition: transform 300ms linear, font-size 300ms linear; transition: transform 300ms linear, font-size 300ms linear; /* -webkit-transition: top 0.2s ease 0s, left 0.2s ease 0s, font-size 0.2s ease 0s; -moz-transition: top 0.2s ease 0s, left 0.2s ease 0s, font-size 0.2s ease 0s; transition: top 0.2s ease 0s, left 0.2s ease 0s, font-size 0.2s ease 0s; */ }
 .form-row .form-control-label {left: 24px;}
 .sky-blue .form-control-label { color: #ffffff;}
 .light-blue .form-control-label.float { opacity: .5; }
@@ -305,7 +305,7 @@ table p { margin-bottom: 0;}
 @media only screen and (min-width: 1100px) {
 	.form-group { margin-bottom: 1rem;}
 	.form-control-label { max-width: none;}
-	.form-control-label.float { width: 200px; text-align: right; left: -195px; top: 14px; -webkit-transform: translate3d(-19px, 0, 0); -moz-transform: translate3d(-19px, 0, 0); -ms-transform: translate3d(-19px, 0, 0); -o-transform: translate3d(-19px, 0, 0); transform: translate3d(-19px, 0, 0); }
+	.form-control-label.float { width: 200px; text-align: right; left: -200px; top: 14px; -webkit-transform: translate3d(-14px, 0, 0); -moz-transform: translate3d(-14px, 0, 0); -ms-transform: translate3d(-14px, 0, 0); -o-transform: translate3d(-14px, 0, 0); transform: translate3d(-14px, 0, 0); }
 	.form-row .form-control-label.float.top {left: 1.8rem;}
 	.form-control-label.float.top { width: auto; text-align: left; left: 0; top: -20px; }
 	.label-touch { display: none;}
@@ -846,8 +846,8 @@ os .ui-helper-hidden{display:none}os .ui-helper-hidden-accessible{border:0;clip:
 ===========================================*/
 
 .dropdown-nav ul { padding-left: 0; list-style: none; margin-bottom: 0;}
-.dropdown-nav ul a { background-color: transparent; opacity: 0;}
-.dropdown-nav.dropdown-is-active ul a { background-color: transparent; opacity: 1; -webkit-transition: opacity 0.4s; -moz-transition: opacity 0.4s; -ms-transition: opacity 0.4s; -o-transition: opacity 0.4s; transition: opacity 0.4s;}
+.dropdown-nav ul a { background-color: transparent;}
+.dropdown-nav.dropdown-is-active ul a { background-color: transparent;}
 
 
 /* remove “X” from search input field */
@@ -2719,11 +2719,11 @@ a.slide-container { color: inherit; text-decoration: none; background-color: tra
 	-ms-transform: translate(0,0);
 	-o-transform: translate(0,0);
 	transform: translate(0,0);
-	-webkit-transition: transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
-	-moz-transition: transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
-	-ms-transition: transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
-	-o-transition: transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1) ;
-	transition: transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1) ;
+	-webkit-transition: transform 800ms cubic-bezier(0.165, 0.84, 0.44, 1);
+	-moz-transition: transform 800ms cubic-bezier(0.165, 0.84, 0.44, 1);
+	-ms-transition: transform 800ms cubic-bezier(0.165, 0.84, 0.44, 1);
+	-o-transition: transform 800ms cubic-bezier(0.165, 0.84, 0.44, 1) ;
+	transition: transform 800ms cubic-bezier(0.165, 0.84, 0.44, 1) ;
 }
 
 
@@ -2733,11 +2733,11 @@ a.slide-container { color: inherit; text-decoration: none; background-color: tra
 	-ms-transform: translate(-5%, 0);
 	-o-transform: translate(-5%, 0);
 	transform: translate(-5%, 0);
-	-webkit-transition: transform 0.5s 0s;
-	-moz-transition: transform 0.5s 0s;
-	-ms-transition: transform 0.5s 0s;
-	-o-transition: transform 0.5s 0s;
-	transition: transform 0.5s 0s;
+	-webkit-transition: transform 0.7s 0.2s;
+	-moz-transition: transform 0.7s 0.2s;
+	-ms-transition: transform 0.7s 0.2s;
+	-o-transition: transform 0.7s 0.2s;
+	transition: transform 0.7s 0.2s;
 }
 .slide-img img { display: inline-block; max-width: 100%; height: auto;}
 .slide-img-bg { width: 100%; height: 100%; position: absolute; bottom: 0; left: 0; right: 0; top: 0; z-index: -1; }
@@ -3832,7 +3832,7 @@ a.current-tp .icon { display: inline-block; width: 24px; height: 24px; position:
 @media (min-width:1100px) and (max-width: 1160px) {
 	.filter-departments .time { width: 295px }
 }
-.filter-departments .time label { font-size: 1rem; color: rgba(255,255,255,.5); margin-bottom: .5rem;}
+.filter-departments .time label { font-size: 1rem; color: rgba(255,255,255,.5); margin-bottom: .7rem;}
 .filter-departments .sky-blue .range-slider-double-wrap .range-double-amount { background-color: transparent; background-image: none; color: #ffffff;}
 .filter-departments .sky-blue .range-double-slider { background-color: #42a7d1;}
 
@@ -3844,7 +3844,7 @@ a.current-tp .icon { display: inline-block; width: 24px; height: 24px; position:
 
 .filter-view-type-switcher { text-align: left; padding-top: 14px;}
 .filter-view-type-switcher .btn-group { width: 100%; display: inline-block; border: 2px solid #218db9;}
-.filter-view-type-switcher .btn-group a { width: 48%; height: 42px; line-height: 38px; display: inline-block; vertical-align: middle; padding: 0 .75rem; color: #218db9; background-color: transparent; font-size: 1.25rem; text-transform: lowercase; text-align: center;}
+.filter-view-type-switcher .btn-group a { width: 50%; float: left; height: 42px; line-height: 38px; display: inline-block; vertical-align: middle; padding: 0 .75rem; color: #218db9; background-color: transparent; font-size: 1.25rem; text-transform: lowercase; text-align: center;}
 .filter-view-type-switcher .btn-group a.selected { color: #ffffff; background-color: #218db9; pointer-events: none;}
 @media (min-width:1100px) {
 	.filter-view-type-switcher .btn-group { width: auto;}
