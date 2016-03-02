@@ -3846,7 +3846,7 @@ a.current-tp .icon { display: inline-block; width: 24px; height: 24px; position:
 .filter-departments #autocomplete { padding-right: 40px; background: url(img/icon-plane.png) no-repeat 96% 50% transparent;}
 
 .filter-view-type-switcher { text-align: left; padding-top: 14px;}
-.filter-view-type-switcher .btn-group { width: 100%; display: inline-block; border: 2px solid #218db9;}
+.filter-view-type-switcher .btn-group { position: relative; top: 9px; width: 100%; display: inline-block; border: 2px solid #218db9;}
 .filter-view-type-switcher .btn-group a { width: 50%; float: left; height: 42px; line-height: 38px; display: inline-block; vertical-align: middle; padding: 0 .75rem; color: #218db9; background-color: transparent; font-size: 1.25rem; text-transform: lowercase; text-align: center;}
 .filter-view-type-switcher .btn-group a.selected { color: #ffffff; background-color: #218db9; pointer-events: none;}
 @media (min-width:1100px) {

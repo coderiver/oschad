@@ -903,36 +903,33 @@ Main Components
 }
 
 .dropdown-nav {
-  position: fixed;
-  z-index: 5;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #dcdf3c;
-  color: #000000;
-  visibility: hidden;
-  /* Force Hardware Acceleration */
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-transform: translateY(-100%);
-  -moz-transform: translateY(-100%);
-  -ms-transform: translateY(-100%);
-  -o-transform: translateY(-100%);
-  transform: translateY(-100%);
-  -webkit-transition: -webkit-transform 0.5s 0s, visibility 0s 0.5s;
-  -moz-transition: -moz-transform 0.5s 0s, visibility 0s 0.5s;
-  transition: transform 0.5s 0s, visibility 0s 0.5s;
+	position: fixed;
+	z-index: 5;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #dcdf3c;
+	color: #000000;
+	visibility: hidden;
+	/* Force Hardware Acceleration */
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform: translate(100%, -100%);
+	-moz-transform: translate(100%, -100%);
+	-ms-transform: translate(100%, -100%);
+	-o-transform: translate(100%, -100%);
+	transform: translate(100%, -100%);
+	-webkit-transition: transform 0.4s, visibility 0s 0.4s;
+	-moz-transition: transform 0.4s, visibility 0s 0.4s;
+	transition: transform 0.4s, visibility 0s 0.4s;
+
 }
+
 .dropdown-nav h2 {
   /* dropdown title - mobile version only */
   position: relative;
-  z-index: 1;
+  z-index: 5;
   color: #9fa12a;
   background-color: #dcdf3c;
   border-bottom: 1px solid #c9cc32;
@@ -941,7 +938,7 @@ Main Components
 .dropdown-nav .nav-close {
   /* 'X' close icon - mobile version only */
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   right: 0;
   top: 0;
   height: 50px;
@@ -986,15 +983,15 @@ Main Components
   transform: translateX(-50%) translateY(-50%) rotate(-45deg);
 }
 .dropdown-nav.dropdown-is-active {
-  visibility: visible;
-  -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -o-transform: translateY(0);
-  transform: translateY(0);
-  -webkit-transition: -webkit-transform 0.5s 0s, visibility 0s 0s;
-  -moz-transition: -moz-transform 0.5s 0s, visibility 0s 0s;
-  transition: transform 0.5s 0s, visibility 0s 0s;
+	visibility: visible;
+	-webkit-transform: translate(0, 0);
+	-moz-transform: translate(0, 0);
+	-ms-transform: translate(0, 0);
+	-o-transform: translate(0, 0);
+	transform: translate(0, 0);
+	-webkit-transition: transform 0.4s, visibility 0s 0s;
+	-moz-transition: transform 0.4s, visibility 0s 0s;
+	transition: transform 0.4s, visibility 0s 0s;
 }
 @media only screen and (min-width: 768px) {
   .dropdown-nav .nav-close {
@@ -2129,7 +2126,7 @@ a.accordion-item-title {background-color: #dcdf3c; text-decoration: none; color:
  TOP BAR STYLES
 ========================*/
 /*.top-bar::after { content: ""; width: 100%; height: 100%; background-color: #161a1b; position: absolute; right: -100%; top: 0;}*/
-.top-bar { position: relative; background-color: #161a1b; height: 48px; line-height: 48px; z-index: 4;}
+.top-bar { position: relative; background-color: #161a1b; height: 48px; line-height: 48px; z-index: 3;}
 .nav-is-open .top-bar {z-index: 3;}
 .top-bar > .container { height: 100%; }
 @media (max-width:600px){
