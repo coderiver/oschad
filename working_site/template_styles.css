@@ -1539,7 +1539,7 @@ Main Components
 .inline-nav-content > li > .dropdown-cards > li.go-back { display: none;}
 
 /*other services*/
-.inline-nav-content > li > .dropdown-all { width: 870px; position: absolute !important; top: calc(100% + 50px); left: auto; right: 0; letter-spacing: -4px; word-spacing: -4px; }
+.inline-nav-content > li > .dropdown-all { width: 870px; position: absolute !important; top: 100%; left: auto; right: 0; letter-spacing: -4px; word-spacing: -4px; }
 .inline-nav-content > li > .dropdown-all > li { position: relative; display: inline-block; vertical-align: top; width: 33.33333%; letter-spacing: normal; word-spacing: normal; }
 @media only screen and (min-width: 1440px) {
 	.inline-nav-content > li > .dropdown-all {width: 1160px;}
