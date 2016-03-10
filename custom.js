@@ -882,7 +882,7 @@ localStorage['FSize']=10;
 			});
 		}
 	}
-	
+
 	
 	
 	//custom language switcher settings
