@@ -473,8 +473,8 @@ localStorage['FSize']=10;
 		}
 	}
 
-	
-	
+
+
 	/*sliders*/
 
 
@@ -487,6 +487,7 @@ localStorage['FSize']=10;
 			$('.slick-active').find('.slide-img').removeClass('slide-img-active');
 			$('.slick-active').find('.slide-content').removeClass('slide-content-active');
 		});
+
 
 		if($('.main-slider').exists()) {
 			$('.main-slider').slick({
@@ -517,7 +518,20 @@ localStorage['FSize']=10;
 					// instead of a settings object
 				]
 			});
+
 		}
+
+		var dots = $('.slick-dots li');
+		dots.prev().click(function(){
+			$('.main-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+				$('.slick-active').prev(function(){
+					$(this).find('.slide-content').addClass('slide-content-active-prev');
+				});
+			});
+
+			console.log('result', 'it works!');
+
+		});
 
 
 		if($('.sync-slider-for').exists()) {

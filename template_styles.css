@@ -302,7 +302,7 @@ table p { margin-bottom: 0;}
 .form-control-label.float { top: -20px; opacity: 1; left: .625rem; font-size: 13px;}
 .form-row .form-control-label.float { left: .625rem;}
 
-.form-label-content { position: absolute; opacity: 0; top: 24px; right: 14px; font-size: 100%; white-space: nowrap; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -ms-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; transition: all .3s ease-in-out;}
+.form-label-content { position: absolute; opacity: 0; top: 24px; right: 14px; font-size: 13px; white-space: nowrap; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -ms-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; transition: all .3s ease-in-out;}
 .form-control:focus ~ .form-label-content { opacity: 0; top: -20px; font-size: 13px; }
 
 .label-touch { display: inline-block; max-width: 100%; font-size: 13px; line-height: 1.1; opacity: .5; margin-bottom: 0;}
@@ -2702,6 +2702,13 @@ a.slide-container { color: inherit; text-decoration: none; background-color: tra
 	-o-transition: transform 0.7s 0.2s;
 	transition: transform 0.7s 0.2s;
 }
+.slide-content-active-prev {
+		-webkit-transform: translate(0, 0);
+		-moz-transform: translate(0, 0);
+		-ms-transform: translate(0, 0);
+		-o-transform: translate(0, 0);
+		transform: translate(0, 0);
+}
 
 .slide-title,
 .slide-description {color: inherit;}
@@ -2748,6 +2755,15 @@ a.slide-container { color: inherit; text-decoration: none; background-color: tra
 	-o-transition: transform 0.7s 0.2s;
 	transition: transform 0.7s 0.2s;
 }
+
+.slide-img-active-prev {
+		-webkit-transform: translate(0, 0);
+		-moz-transform: translate(0, 0);
+		-ms-transform: translate(0, 0);
+		-o-transform: translate(0, 0);
+		transform: translate(0, 0);
+}
+
 .slide-img img { display: inline-block; max-width: 100%; height: auto;}
 .slide-img-bg { width: 100%; height: 100%; position: absolute; bottom: 0; left: 0; right: 0; top: 0; z-index: -1; }
 .slide-img-bg::after { content: ""; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); position: absolute; left: 0; top: 0; z-index: 1; }
