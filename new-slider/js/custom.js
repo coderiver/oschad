@@ -413,9 +413,30 @@ var $ = jQuery.noConflict();
 	
 	
 	/*sliders*/
+
+	function slideSwiper () {
+		//initialize swiper when document ready
+		var mySwiper = new Swiper ('.swiper-container', {
+
+			// Optional parameters
+			direction: 'horizontal',
+			autoplay: 5000,
+			speed: 1400,
+			autoplayDisableOnInteraction: false,
+			loop: true,
+			parallax: true,
+
+			// Pagination
+			pagination: '.swiper-pagination',
+			paginationClickable: true
+		})
+	}
+
+
+
 	function custom_sliders() {
-		
-		if($('.main-slider').exists()) {
+
+		/*if($('.main-slider').exists()) {
 			$('.main-slider').slick({
 				//lazyLoad: 'progressive',
 				//adaptiveHeight: true,
@@ -443,9 +464,9 @@ var $ = jQuery.noConflict();
 					// instead of a settings object
 				]			
 			});						
-		}
-		
-		
+		}*/
+
+
 		
 		if($('.sync-slider-for').exists()) {
 			$('.sync-slider-for').slick({
@@ -1012,8 +1033,9 @@ var $ = jQuery.noConflict();
 		/*
 		
 		*/
-		
-		
+
+		//swiperJS
+		slideSwiper();
 		
 		//dropdown menu
 		custom_nav_menu();
