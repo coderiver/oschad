@@ -24,6 +24,15 @@ html{-webkit-box-sizing:border-box;box-sizing:border-box;font-size:14px !importa
 
 
 /*=============================
+CLASSES FOR JS
+=============================*/
+.js-bgc-blue{background-color: #6dbdde !important;}
+.js-bgc-white{background-color: #fff !important;}
+.js-padding-none{padding: 0 !important;}
+.js-margin-none{margin: 0 !important;}
+.js-height-none{height: 0 !important;}
+.js-pb{padding-bottom: 90% !important;}
+/*=============================
  GRID STYLES
 ==============================*/
 .container,.container-fluid{padding-right:.625rem;padding-left:.625rem;margin-right:auto;margin-left:auto}
@@ -824,6 +833,9 @@ input[type="button"].btn-block { width: 100%; }
 .no-touch .btn { line-height: 40px;}
 .no-touch .btn-1 { line-height: 46px;}
 .no-touch .btn-sm { line-height: 30px;}
+
+.filter-btn { display: none; position: absolute; float: left; left: 1.25rem; color: #fff; text-transform: uppercase; font-weight: bold; cursor: pointer; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none;}
+.filter-btn i { position: relative; top: -2px; right: -2px; display: inline-block; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 6px solid #fff; }
 
 .on-map { box-sizing: border-box; display: inline-block; position: relative; top: -8px; width: 65px; height: 27px; line-height: 27px; text-align: center; background-color: transparent; border: 1px solid #6dbdde; border-bottom: none; color: #6dbdde; font-family: Roboto; font-weight: normal; font-size: 12px; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none; transition: none}
 .on-map span { content: ''; display: inline-block; position: absolute; right: 0; bottom: 0; height: 1px; width: 57px; background-color: #6dbdde; }

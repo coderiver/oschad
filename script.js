@@ -229,12 +229,6 @@ $('.btn-group a:first-child').click(function(){
 	$('.dep-map-container').show();
 	$('.btn-group a:last-child').removeClass('selected');
 	$(this).addClass('selected');
-	//костыли для того, чтоб убрать с экрана все лишнее
-	$('.top-bar').css('background-color', '#6dbdde');
-	$('.top-navigation').hide();
-	$('.site-logo').hide();
-	$('.site-header').css('height', '0');
-	//================================================//
 });
 $('.btn-group a:last-child').click(function(){
 	//loadBranchList(param);
@@ -242,13 +236,6 @@ $('.btn-group a:last-child').click(function(){
 	$('.dep-map-container').hide();
 	$('.btn-group a:first-child').removeClass('selected');
 	$(this).addClass('selected');
-	//костыли для того, чтоб убрать с экрана все лишнее
-	$('.top-bar').css('background-color', '#161a1b');
-	$('.top-navigation').show();
-	$('.site-logo').show();
-	$('.site-header').css('height', '72px');
-	//================================================//
-
 });
 
 //$('#autocomplete').mouseup(function(){$('.item-num').remove();});
@@ -607,6 +594,52 @@ function setMarker(markers){
 	//If window width <= 1000px - load list
 	if($(window).width() < '1100'){
 		$('.btn-group a:last-child').click();
+
+		$('.btn-group a:first-child').click(function(){
+			$('ul.list-departments.list-unstyled').hide();
+			$('.dep-map-container').show();
+			$('.btn-group a:last-child').removeClass('selected');
+			$(this).addClass('selected');
+			//костыли для того, чтоб убрать с экрана все лишнее
+			$('.dropdown-trigger span').addClass('js-bgc-white');
+			$('.top-bar').addClass('js-bgc-blue');
+			$('.page-header').addClass('js-padding-none');
+			$('.site-header').addClass('js-height-none');
+			$('.dep-map-container').addClass('js-pb');
+			$('.top-navigation').hide();
+			$('.site-logo').hide();
+			$('.section-departments .page-title').hide();
+			$('.filter-location-type').hide();
+			$('.filter-time-switcher').hide();
+			$('.filter-btn').show();
+			//================================================//
+		});
+		$('.btn-group a:last-child').click(function(){
+			//loadBranchList(param);
+			$('ul.list-departments.list-unstyled').show();
+			$('.dep-map-container').hide();
+			$('.btn-group a:first-child').removeClass('selected');
+			$(this).addClass('selected');
+			//костыли для того, чтоб убрать с экрана все лишнее
+			$('.dropdown-trigger span').removeClass('js-bgc-white');
+			$('.top-bar').removeClass('js-bgc-blue');
+			$('.page-header').removeClass('js-padding-none');
+			$('.site-header').removeClass('js-height-none');
+			$('.dep-map-container').removeClass('js-pb');
+			$('.top-navigation').show();
+			$('.site-logo').show();
+			$('.section-departments .page-title').show();
+			$('.filter-location-type').show();
+			$('.filter-time-switcher').show();
+			$('.filter-btn').hide();
+			//================================================//
+
+		});
+
+		$('.filter-btn').click(function() {
+			$('.filter-location-type').fadeToggle();
+			$('.filter-time-switcher').fadeToggle();
+		});
 	}
 
 	setTimeout("$('.section-content').removeClass('preload');",200);
