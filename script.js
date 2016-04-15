@@ -605,7 +605,6 @@ function setMarker(markers){
 			$('.top-bar').addClass('js-bgc-blue');
 			$('.page-header').addClass('js-padding-none');
 			$('.site-header').addClass('js-height-none');
-			$('.dep-map-container').addClass('js-pb');
 			$('.top-navigation').hide();
 			$('.site-logo').hide();
 			$('.section-departments .page-title').hide();
@@ -625,7 +624,6 @@ function setMarker(markers){
 			$('.top-bar').removeClass('js-bgc-blue');
 			$('.page-header').removeClass('js-padding-none');
 			$('.site-header').removeClass('js-height-none');
-			$('.dep-map-container').removeClass('js-pb');
 			$('.top-navigation').show();
 			$('.site-logo').show();
 			$('.section-departments .page-title').show();
