@@ -1,69 +1,17 @@
 var $ = jQuery.noConflict();
 localStorage['FSize']=10;
 
-function numFormat(n, d, s) { // number format function
-	if (arguments.length == 2) { s = " "; }
-	if (arguments.length == 1) { s = " "; d = ","; }
-	n = n.toString();
-	n = n.replace(/\./g, d);
-	n=delThouthandSpaces(n);
-	a = n.split(d);
-	x = a[0];
-	y = a[1];
-	z = "";
-	if (typeof(x) != "undefined") {
-	for (i=x.length-1;i>=0;i--)
-		z += x.charAt(i);
-	z = z.replace(/(\d{3})/g, "$1" + s);
-	if (z.slice(-s.length) == s)
-		z = z.slice(0, -s.length);
-	x = "";
-	for (i=z.length-1;i>=0;i--)
-		x += z.charAt(i);
-	if (typeof(y) != "undefined" && y.length > 0)
-		x += d + y;
-	}
-	return x;
-}
-function delThouthandSpaces(val){
-	val=val.toString();
-	return val.replace(/ /g, '');
-}
-
-function returnMonth($periodVal){
-	$periodVal = $periodVal.toString();
-	if($periodVal==1 || ($periodVal[$periodVal.length - 1] == 1 && $periodVal != 11)){
-		return "місяць";
-	}else if(($periodVal>1 && $periodVal<5) || ($periodVal[$periodVal.length - 1] > 1 && $periodVal[$periodVal.length - 1] < 5 && $periodVal > 21)){
-		return "місяці";
-	}else{
-		return "місяців";
-	}
-}
-function returnYear($periodVal){
-	$periodVal = $periodVal.toString();
-	if($periodVal==1 || $periodVal[$periodVal.length - 1] == 1){
-		return "рiк";
-	}else if(($periodVal>1 && $periodVal<5) || ($periodVal[$periodVal.length - 1] > 1 && $periodVal[$periodVal.length - 1] < 5 && $periodVal > 21)){
-		return "роки";
-	}else{
-		return "рокiв";
-	}
-}
-
-
-
 (function($) {
 	//"use strict";
-
+	
 	/* ============================================================
 								FUNCTIONS
 	============================================================ */
-
+	
 	/* check for the existence of elements */
 	$.fn.exists = function(){return this.length>0;}
-
-
+	
+	
 	/*mobile definition*/
 	var isMobile = {
 		Android: function() {
@@ -85,43 +33,43 @@ function returnYear($periodVal){
 			return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
 		}
 	};
-
-
-
+	
+	
+	
 	//check mobile or desktop
     function checkWindowWidth() {
         var mq = window.getComputedStyle(document.querySelector('body'), '::before').getPropertyValue('content').replace(/"/g, '').replace(/'/g, "");
         return ( mq == 'mobile' ) ? false : true;
     }
-
-
-
-
+	
+	
+	
+	
 	//dropdown menu
 	function custom_nav_menu() {
-
+	
 		//open/close mega-navigation
 		$('.dropdown-trigger').on('click', function(event){
 			event.preventDefault();
 			toggleNav();
 		});
-
+	
 		//close meganavigation
 		$('.dropdown-nav .nav-close').on('click', function(event){
 			event.preventDefault();
 			toggleNav();
 		});
-
+	
 		//on mobile - open submenu
 		$('.has-children').children('a').on('click', function(event){
-			//prevent default clicking on direct children of .has-children
+			//prevent default clicking on direct children of .has-children 
 			if (Modernizr.touch) {
 				event.preventDefault();
 			}
 			var selected = $(this);
 			selected.next('ul').removeClass('is-hidden').end().parent('.has-children').parent('ul').addClass('move-out');
 		});
-
+	
 		//on desktop - differentiate between a user trying to hover over a dropdown item vs trying to navigate into a submenu's contents
 		var submenuDirection = ( !$('.dropdown-wrapper').hasClass('open-to-left') ) ? 'right' : 'left';
 		$('.dropdown-nav-content').menuAim({
@@ -142,14 +90,14 @@ function returnYear($periodVal){
 			},
 			submenuDirection: submenuDirection,
 		});
-
+	
 		//submenu items - go back link
 		$('.go-back').on('click', function(){
 			var selected = $(this),
 				visibleNav = $(this).parent('ul').parent('.has-children').parent('ul');
 			selected.parent('ul').addClass('is-hidden').parent('.has-children').parent('ul').removeClass('move-out');
-		});
-
+		}); 
+	
 		function toggleNav(){
 			var navIsVisible = ( !$('.dropdown-nav').hasClass('dropdown-is-active') ) ? true : false;
 			$('body').toggleClass('nav-is-open', navIsVisible);
@@ -160,7 +108,7 @@ function returnYear($periodVal){
 					$('.has-children ul').addClass('is-hidden');
 					$('.move-out').removeClass('move-out');
 					$('.is-active').removeClass('is-active');
-				});
+				});	
 			}
 		}
 
@@ -176,16 +124,16 @@ function returnYear($periodVal){
 			});
 		}
 		departmentOpenHours();
-
-
+		
+		
 		//change this breakpoint in the master.css file (body::before)
         var $search_nav = $('#site-navigation .has-form'),
 			$site_navigation = $('#site-navigation'),
 			$menu_title = $site_navigation.find('.menu-title')
 			$main_menu = $('#main-menu');
-
+			
 			var $container = $('.dropdown-all').masonry({ itemSelector: 'li.has-children' });
-
+		
         //move .search-nav inside header on laptop
 		//change nav class
         move_elements();
@@ -197,11 +145,11 @@ function returnYear($periodVal){
 			change_classes();
 			masonry_menu();
         });
-
+		
 		//change class for nav desktop/mobile
 		function change_classes() {
 			var desktop = checkWindowWidth();
-
+			
 			if( desktop /*&& $main_menu.hasClass('dropdown-nav-content')*/) {
 				$main_menu.removeClass('dropdown-nav-content').addClass('inline-nav-content');
 				$site_navigation.removeClass('dropdown-nav').addClass('inline-nav');
@@ -212,55 +160,55 @@ function returnYear($periodVal){
 				//$('body').removeClass('overflow-hidden');
 			}
 		}
-
-
+		
+		
 		//move search nav in DOM
 		function move_elements() {
 			var screenSize = checkWindowWidth();
-
+		   
 			if ( screenSize ) {
 				$search_nav.detach();
 				$search_nav.insertBefore('#main-menu .dropdown-all');
-
+			   
 			} else {
 				$search_nav.detach();
-				$search_nav.insertBefore('#main-menu > li:first-child');
+				$search_nav.insertBefore('#main-menu > li:first-child');				
 			}
 		}
-
-
-
+		
+		
+		
 		function masonry_menu() {
-
+			
 			var screenSize = checkWindowWidth();
-
-
+			
+			
 			if(screenSize) {
 				$container.masonry({ itemSelector: 'li.has-children' });
 				//console.log(screenSize);
-			} else {
+			} else {					
 				$container.masonry('destroy');
 			}
 				//isActive = !isActive;
-
+			
 		}
-
+		
 	}
-
-
-
-
+	
+	
+	
+	
 	/*tabs*/
 	function custom_tabs() {
 		if ($('.tabs-container').exists()) {
 			var tabs = $('.tabs-container');
-
+	
 			tabs.each(function(){
 				var tab = $(this),
 					tabItems = tab.find('ul.tabs-navigation'),
 					tabContentWrapper = tab.children('div.panes'),
 					tabNavigation = tab.find('nav');
-
+		
 				tabItems.on('click', 'a', function(event){
 					event.preventDefault();
 					var selectedItem = $(this);
@@ -268,19 +216,19 @@ function returnYear($periodVal){
 						var selectedTab = selectedItem.data('content'),
 							selectedContent = tabContentWrapper.find('div.pane[data-content="'+selectedTab+'"]'),
 							slectedContentHeight = selectedContent.innerHeight();
-
+						
 						tabItems.find('a.selected').removeClass('selected');
 						selectedItem.addClass('selected');
 						selectedContent.addClass('selected').siblings('div.pane').removeClass('selected');
-						//animate tabContentWrapper height when content changes
+						//animate tabContentWrapper height when content changes 
 						tabContentWrapper.animate({
 							'height': slectedContentHeight
 						}, 200);
 					}
 				});
-
+				
 			});
-
+			
 			$(window).on('resize', function(){
 				tabs.each(function(){
 					var tab = $(this);
@@ -289,14 +237,14 @@ function returnYear($periodVal){
 			});
 		}
 	}
-
-
-
+	
+	
+	
 	/*tabs select*/
 	function custom_tabs_select() {
 		if ($('.tabs-container-select').exists()) {
 			var tabs = $('.tabs-container-select');
-
+	
 			tabs.each(function(){
 				var tab = $(this),
 					tabItems = tab.find('ul.tabs-nav'),
@@ -305,16 +253,16 @@ function returnYear($periodVal){
 					tabTriggerBtn = tab.find('nav').find('.placeholder a'),
 					currentTrigger = tabItems.find('a.selected'),
 					currentTriggerText = currentTrigger.html();
-
+		
 				tabTriggerBtn.html(currentTriggerText);
-
+				
 				tabTriggerBtn.on('click', function(event){
 					event.preventDefault();
 					var selectedItem = $(this);
 					selectedItem.parents('nav').toggleClass('is-active');
 					hideTabNav();
 				});
-
+				
 				function hideTabNav() {
 					$(document).on('click', function(event){
 						if( !$(event.target).is(tabTriggerBtn)) {
@@ -322,7 +270,7 @@ function returnYear($periodVal){
 						}
 					});
 				}
-
+		
 				tabItems.on('click', 'a', function(event){
 					event.preventDefault();
 					var selectedItem = $(this);
@@ -331,25 +279,25 @@ function returnYear($periodVal){
 							selectedContent = tabContentWrapper.find('div.pane[data-content="'+selectedTab+'"]'),
 							slectedContentHeight = selectedContent.outerHeight();
 							console.log(slectedContentHeight+'-'+$('.currency-rate-section>.content').innerHeight());
-
+						
 						tabItems.find('a.selected').removeClass('selected');
 						selectedItem.addClass('selected');
 						selectedContent.addClass('selected').siblings('div.pane').removeClass('selected');
-
+						
 						//change text in placeholder
-						tabTriggerBtn.html(selectedItem.html());
-
+						tabTriggerBtn.html(selectedItem.html());						
+						
 						if($('.currency-rate-section>.content').innerHeight() < slectedContentHeight+20)
 							bottPadding='; padding-bottom: 20px;';
-						//animate tabContentWrapper height when content changes
+						//animate tabContentWrapper height when content changes 
 						tabContentWrapper.animate({
 							'height': slectedContentHeight+bottPadding
 						}, 200);
 					}
 				});
-
+				
 			});
-
+			
 			$(window).on('resize', function(){
 				tabs.each(function(){
 					var tab = $(this);
@@ -358,14 +306,14 @@ function returnYear($periodVal){
 			});
 		}
 	}
-
-
-
-
-
-
-
-
+	
+	
+	
+	
+	
+	
+	
+	
 	//move currency nav in DOM
 	/*function currency_nav() {
 		if ($('.currency-rate-section').exists()) {
@@ -376,52 +324,52 @@ function returnYear($periodVal){
 			});
 		}
 	}*/
-
-
-
-
-
+	
+	
+	
+	
+	
 	//accordion
 	function custom_accordion() {
 		if ($('.accordion').exists()) {
-
+			
 			function close_accordion_item() {
 				$('.accordion .accordion-item-title').removeClass('is-active');
 				$('.accordion .accordion-item-content').slideUp(300);
 			}
-
+			
 			$('.accordion-item-title').click(function(e) {
 				// Grab current anchor value
 				e.preventDefault();
-
+		
 				if($(e.target).is('.is-active')) {
 					close_accordion_item();
 				} else {
-					close_accordion_item();
+					close_accordion_item();			
 					// Add active class to section title
 					$(this).addClass('is-active');
 					// Open up the hidden content panel
 					$(this).next('.accordion-item-content').slideDown(300);
 				}
 			});
-
+			
 		} //end if
 	}
-
-
-
-
-
-
-
+	
+	
+	
+	
+	
+	
+	
 	//font size change
 	function change_fontSize() {
 		var smaller = $('.font-switcher').find('a.smaller-trigger'),
 			bigger = $('.font-switcher').find('a.bigger-trigger'),
 			$body = $('body');
-
+		
 		/*
-
+		
 		function change_size(element, size) {
 			var current = parseInt(element.css('font-size'));
 			if(size = 'smaller') {
@@ -432,7 +380,7 @@ function returnYear($periodVal){
 			element.css('font-size', new_size + 'px');
 		}
 		*/
-
+		
 		smaller.click( function(event) {
 			if(parseInt($('html').css('font-size'))>10){
 				event.preventDefault();
@@ -448,15 +396,15 @@ function returnYear($periodVal){
 				$('html').css('font-size', '+=2');
 				localStorage['FSizePX']=$('html').css('font-size');
 			}
-		});
-
+		});		
+		
 	}
-
-
-
-
-
-
+		
+	
+	
+	
+	
+	
 	//custom popup
 	function custom_popup() {
 		//open popup
@@ -464,12 +412,12 @@ function returnYear($periodVal){
 			var triggerBtn = $(this),
 				siteContainer = $('.site-container');
 				selectedTrigger = triggerBtn.data('content'),
-				selectedPopup = siteContainer.find('div.popup[data-content="'+selectedTrigger+'"]');
+				selectedPopup = siteContainer.find('div.popup[data-content="'+selectedTrigger+'"]');				
 			event.preventDefault();
 			selectedPopup.addClass('is-visible');
 			$('html').addClass('overflow-hidden');
 		});
-
+		
 		//close popup
 		$('.popup').on('click', function(event){
 			if( $(event.target).is('.popup-close, .btn-reset') || $(event.target).is('.popup') ) {
@@ -478,7 +426,7 @@ function returnYear($periodVal){
 				$('html').removeClass('overflow-hidden');
 			}
 		});
-
+		
 		//close popup when clicking the esc keyboard button
 		$(document).keyup(function(event){
 			if(event.which=='27'){
@@ -487,14 +435,14 @@ function returnYear($periodVal){
 			}
 		});
 	}
-
-
-
-
-
-
-
-	/*SLIDE CAPTIONS*/
+	
+	
+	
+	
+	
+	
+	
+	/*SLIDE CAPTIONS*/		
 	function slideBoxes() {
 		if($('.deposit-label-container').exists()) {
 			if (Modernizr.touch) {
@@ -510,14 +458,14 @@ function returnYear($periodVal){
 						$(this).find('.slide-box').slideUp(200);
 					}
 				);
-
+				
 				/*
 				$('.deposit-label-container').on({
 					mouseenter : function() {
-						$(this).find('.slide-box').slideDown(150);
+						$(this).find('.slide-box').slideDown(150);               
 					},
 					mouseleave : function() {
-						$(this).find('.slide-box').slideUp(200);
+						$(this).find('.slide-box').slideUp(200);            
 					}
 				},'.deposit-label');
 				*/
@@ -525,21 +473,10 @@ function returnYear($periodVal){
 		}
 	}
 
-	function slideServices() {
-	   if($('#services-list').exists()) {
-	       var contain = $('.section-vip-services').find('.section-content');
-           var h = contain.height();
-            $('#services-list').click( function (event) {
-                $(this).toggleClass('toggled');
-				if ($(this).hasClass('toggled')) {
-				    contain.animate({height:contain.prop('scrollHeight'),overflow:'visible'},'200');
-				}else{
-					contain.animate({height:h,overflow:'hidden'},'200');
-				}
-			});
-        }
-	}
+
+
 	/*sliders*/
+
 
 	function custom_sliders() {
 		$('.main-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
@@ -608,11 +545,11 @@ function returnYear($periodVal){
 				responsive: [
 					{
 						breakpoint: 1099,
-						settings: {
+						settings: {							
 							dots: false,
 							fade: false,
 						}
-					},
+					},					
 					// You can unslick at a given breakpoint now by adding:
 					// settings: "unslick"
 					// instead of a settings object
@@ -630,7 +567,7 @@ function returnYear($periodVal){
 		  		focusOnSelect: true
 			});
 		}
-
+		
 		if($('.arrow-slider').exists()) {
 			$('.arrow-slider').slick({
 				dots: false,
@@ -639,18 +576,18 @@ function returnYear($periodVal){
 				speed: 300,
 				slidesToShow: 1,
 				adaptiveHeight: true
-			});
-
+			});			
+			
 			$('.slide-next').click(function(){
 				$(".vip-select-slider").slick('slickNext');
 			});
-
+			
 			$('.slide-prev').click(function(){
 				$(".vip-select-slider").slick('slickPrev');
 			});
 		}
 	}
-
+	
 
 	/*media*/
 	/*Video Preload - YouTube*/
@@ -674,31 +611,31 @@ function returnYear($periodVal){
 					var iframe = $('<iframe/>', {'frameborder': '0','allowfullscreen':'', 'enablejsapi':'1', 'version':'3', 'src': iframe_url })
 					// Replace the YouTube thumbnail with YouTube HTML5 Player
 					$(this).replaceWith(iframe);
-				});
+				});			
 			});
 		}*/
 	//}
 
-
+	
 	//fixed credit form
 	function custom_credit_form() {
 		if($('.credit-form-container').exists()) {
-
+		
 			//update these values if you change these breakpoints in the style.css file (or _layout.scss if you use SASS)
 			var MqM= 768,
 				MqL = 1099;
-
+				
 			var creditFormContainer = $('.credit-form-container'),
 				creditInfoContainer = $('.credit-fixed-container > .inner-content');
-
-
+				
+				
 				//update category sidebar while scrolling
 			$(window).on('scroll', function(){
 				if ( $(window).width() > MqL ) {
-					(!window.requestAnimationFrame) ? updateFormPosition() : window.requestAnimationFrame(updateFormPosition);
+					(!window.requestAnimationFrame) ? updateFormPosition() : window.requestAnimationFrame(updateFormPosition); 
 				}
 			});
-
+		
 			$(window).on('resize', function(){
 				if($(window).width() <= MqL) {
 					creditFormContainer.removeClass('is-fixed').css({
@@ -708,7 +645,7 @@ function returnYear($periodVal){
 						'-o-transform': 'translateY(0)',
 						'transform': 'translateY(0)',
 					});
-				}
+				}	
 				if( creditFormContainer.hasClass('is-fixed') ) {
 					//var $pad = $('.container').css('padding-right').split('px'),
 						//$pos = Number($pad[0])+($('#flag').offset().left + 1) - $('.credit-form-container').width(),
@@ -717,14 +654,14 @@ function returnYear($periodVal){
 						//'left': Number($pos) - Number($m),
 						//'left': $(window).width() - (creditInfoContainer.offset().left + creditInfoContainer.width()),
 					});
-
-
-
+					
+					
+					
 
 				}
 			});
-
-
+			
+			
 			function updateFormPosition() {
 				var $negativeMargin = 330,
 					top = $('.credit-fixed-container').offset().top - $negativeMargin,
@@ -734,7 +671,7 @@ function returnYear($periodVal){
 					//$pos = Number($pad[0])+($('#flag').offset().left + 1)-$('.credit-form-container').width();
 				    height += $negativeMargin;
 				if( top - margin <= $(window).scrollTop() && top - margin + height > $(window).scrollTop() ) {
-
+					
 					var leftValue = creditFormContainer.offset().left,
 						widthValue = creditFormContainer.width();
 					creditFormContainer.addClass('is-fixed').css({
@@ -746,7 +683,7 @@ function returnYear($periodVal){
 					 	'-o-transform': 'translateZ(0)',
 					 	'transform': 'translateZ(0)',
 					});
-				} else if( top - margin + height <= $(window).scrollTop()) {
+				} else if( top - margin + height <= $(window).scrollTop()) {					
 					var delta = top - margin + height - $(window).scrollTop();
 					creditFormContainer.css({
 						//'top': margin + 84,
@@ -756,11 +693,11 @@ function returnYear($periodVal){
 						'-o-transform': 'translateZ(0) translateY('+delta+'px)',
 						'transform': 'translateZ(0) translateY('+delta+'px)',
 					});
-				} else {
+				} else { 
     				//var $pad = $('.container').css('padding-right').split('px'),
 						//$pos = Number($pad[0])+($('#flag').offset().left + 1)-$('.credit-form-container').width(),
 						//$m = ($('.credit-entry-content').width() - $('.container').outerWidth())/2;
-
+					
 					creditFormContainer.removeClass('is-fixed').css({
 						//'left': Number($pos) - Number($m),
 						'right': 20,
@@ -770,16 +707,16 @@ function returnYear($periodVal){
 			}
 		}
 	}
-
-
-
+	
+	
+	
 	//slick page nav
 	function custom_page_nav() {
 		if ($('.page-nav').exists()) {
-
+		
 			var contentSections = $('.page-section'),
 				navigationItems = $('.page-nav a');
-
+			
 			function updateNavigation() {
 				contentSections.each(function(){
 					$this = $(this);
@@ -791,60 +728,60 @@ function returnYear($periodVal){
 					}
 				});
 			}
-
+			
 			updateNavigation();
 			$(window).on('scroll', function(){
 				updateNavigation();
 			});
-
+		
 			//smooth scroll to the section
 			navigationItems.on('click', function(event){
 				event.preventDefault();
 				smoothScroll($(this.hash));
 			});
-
-
+		
+		
 			function smoothScroll(target) {
 				$('body,html').animate(
 					{'scrollTop':target.offset().top},
 					600
 				);
 			}
-
+		
 		}
 	}
-
-
-
-
-
-
-
+	
+	
+	
+	
+	
+	
+	
 	//SIDEBAR SETTINGS
-	function custom_sidebar() {
+	function custom_sidebar() {	
 		//cache DOM elements
 		var siteBody = $('body'),
-			sidebar = $('.side-nav');
+			sidebar = $('.side-nav');		
 
 		if (Modernizr.touch) {
 			$(sidebar).on('click', function(event){
 				event.preventDefault();
 				$(siteBody).toggleClass('side-nav-is-open');
 			});
-
+		
 			$('.site-overlay').on('click', function(){
 				$(siteBody).removeClass('side-nav-is-open');
 			});
-
+			
 		} else {
 			sidebar.hover(function(){
 				$(siteBody).toggleClass('side-nav-is-open');
 			});
-		}
-
-		//change Class
+		}	
+						
+		//change Class		
 		function positionSideNavBottom() {
-
+		
 			var sideNavBottom = $('.side-nav .bottom'),
 			sideNavBottomHeight = sideNavBottom.outerHeight(),
 			sideNavPrimaryHeight = $('.side-nav .primary').outerHeight(),
@@ -852,21 +789,21 @@ function returnYear($periodVal){
 			sideNavSearchHeight = $('.side-nav .site-search').outerHeight(),
 			sumHeight = sideNavBottomHeight + sideNavPrimaryHeight + sideNavSecondaryHeight + sideNavSearchHeight,
 			windowHeight = $(window).height() + 100;
-
+			
 			if (sumHeight > windowHeight) {
 				sideNavBottom.removeClass('is-absolute');
 			} else {
 				sideNavBottom.addClass('is-absolute');
-
+				
 			}
-
-
+			
+		
 		}
 		positionSideNavBottom();
 		$(window)
 			.scroll(positionSideNavBottom)
 			.resize(positionSideNavBottom)
-
+			
 	}
 
 
@@ -916,13 +853,13 @@ function returnYear($periodVal){
 	function custom_card_nav() {
 		var triggerBtn = $('a.current-tp');
 		//open nav
-		triggerBtn.on('click', function(event){
+		triggerBtn.on('click', function(event){	
 			var selectedItem = $(this);
 			event.preventDefault();
 			selectedItem.parent('.card-tp').toggleClass('is-open');
-			hideCardNav();
+			hideCardNav();			
 		});
-
+		
 		function hideCardNav() {
 			$(document).on('click', function(event){
 				if( !$(event.target).is(triggerBtn)) {
@@ -931,26 +868,26 @@ function returnYear($periodVal){
 			});
 		}
 	}
-
-
-
-
+	
+	
+	
+	
 	//custom topNav settings
-	function custom_top_nav() {
+	function custom_top_nav() {	
 		var topTriggerBtn = $('.top-navigation span.placeholder'),
 			currentItem = $('.top-navigation li.current-menu-item'),
 			currentItemText = currentItem.find('a').text();
-
+		
 		topTriggerBtn.html(currentItemText);
 		//currentItem.hide();
 		//open nav
-		topTriggerBtn.on('click', function(event){
+		topTriggerBtn.on('click', function(event){	
 			var selectedItem = $(this);
 			event.preventDefault();
 			selectedItem.parents('.top-navigation').toggleClass('is-open');
-			hideTopNav();
+			hideTopNav();			
 		});
-
+		
 		function hideTopNav() {
 			$(document).on('click', function(event){
 				if( !$(event.target).is(topTriggerBtn)) {
@@ -960,25 +897,25 @@ function returnYear($periodVal){
 		}
 	}
 
-
-
+	
+	
 	//custom language switcher settings
-	function custom_lang_switch() {
+	function custom_lang_switch() {	
 		var topTriggerBtn = $('.lang-switcher span.placeholder'),
 			currentItem = $('.lang-switcher li.current-lang'),
 			currentItemText = currentItem.find('a').text();
-
+		
 		topTriggerBtn.html(currentItemText);
 		//currentItem.hide();
 		//open nav
 		if (Modernizr.touch) {
-			topTriggerBtn.on('click', function(event){
+			topTriggerBtn.on('click', function(event){	
 				var selectedItem = $(this);
 				event.preventDefault();
 				selectedItem.parents('.lang-switcher').toggleClass('is-open');
-				hideTopNav();
+				hideTopNav();			
 			});
-
+			
 			function hideTopNav() {
 				$(document).on('click', function(event){
 					if( !$(event.target).is(topTriggerBtn)) {
@@ -988,40 +925,40 @@ function returnYear($periodVal){
 			}
 		} // end if touch
 	}
-
-
+	
+	
 	/*NEW FUNCTIONS*/
-	$(document).on('click','#calculate',function(){
-		$('html, body').animate({
-			scrollTop: $('#section4 .container').offset().top
-		}, 1000);
-	});
-
-
-	function delThouthandSpaces(val){
-		return val.replace(/ /g, '');
-	}
-
-	function addThouthandSpaces(nStr)
-	{
-		nStr += '';
-		x = nStr.split('.');
-		x1 = x[0];
-		x2 = x.length > 1 ? '.' + x[1] : '';
-		var rgx = /(\d+)(\d{3})/;
-		while (rgx.test(x1)) {
-			x1 = x1.replace(rgx, '$1' + ' ' + '$2');
+	
+	function calculateCredit(){
+		if($('.credit-form-container').length > 0){
+			$(document).on('click','#calculate',function(){
+				var $_time = $('#timeCount').attr('data-time');
+				var $_timeCount = $('#timeCount').val();
+				var $_creditSum = $('#creditSum').val();
+				
+				$.ajax({
+					type: 'GET',
+					url: "/include/uamaster/credit_calculator_new.php",
+					data: {creditSum:$_creditSum, creditPercent:$_creditPercent, timeCount: $_timeCount,creditType:$_creditType, time: $_time},
+					dataType: "HTML",
+					success: function(res){
+						$('#section2 .section-content').html(res);
+						$('html, body').animate({
+							scrollTop: $('#section4 .container').offset().top
+						}, 1000);
+					}
+				});
+			})
 		}
-		return x1 + x2;
 	}
-
+	
 	function calculateCreditOnLoad(){
 		if($('.credit-form-container').length > 0){
 			if($_creditType == "A" || $_creditType == "C" || $_creditType == "AC"){
-				var $_creditSum = $('#creditSum').data('value');
-				var $_timeCount = $('#timeCount').data('value');
-				var $_time = 'M';
-
+				var $_creditSum = $_minSum;
+				var $_timeCount = $_startTime;
+				var $_time = 'Y';
+				
 				$.ajax({
 					type: 'GET',
 					url: "/include/uamaster/credit_calculator_new.php",
@@ -1033,24 +970,22 @@ function returnYear($periodVal){
 				});
 			}
 		}
-		$_val = Number($('#creditSum').val());
-		$('#creditSum').val(numFormat($_val.toFixed(2)));
 	}
-
+	
 	function resizeTitle(){
-
+		
 		if($('.page-title').text().length>22 && screen.width>=768){
 			pemSize=$('.page-title').text().length/20;
 			pemSize=(7-pemSize>=2)?7-pemSize:2;
 			$('.page-title').animate({'font-size':pemSize+'rem'},500);
 		}
 	}
-
+	
 	/*media*/
 	/*Video Preload - YouTube*/
 	var players = {};
 	var $playing = new Array;
-	if($('.video-content').exists()) {
+	if($('.video-content').exists()) {	
 		$(".video-content").each(function() {
 			// Based on the YouTube ID, we can easily find the thumbnail image
 			$(this).css('background-image', 'url(http://i.ytimg.com/vi/' + this.id + '/sddefault.jpg)');
@@ -1067,7 +1002,7 @@ function returnYear($periodVal){
 			window.open(iframe_url);
 			return false;
 		}
-
+		
 		var player = new YT.Player(this.id, {
 		  videoId: this.id,
 		  playerVars: { 'autoplay': 1, 'frameborder': 0, 'allowfullscreen':''},
@@ -1076,12 +1011,8 @@ function returnYear($periodVal){
 		$playing.push(this.id);
 	});
 
-	$(document).on('click','.sync-slider-nav .slide-item',function(){
+	$(document).on('click','.slide-item',function(){
 		for(var i=0; i<$playing.length; i++){
-
-			console.log(players[$playing[i]]);
-			if(typeof players[$playing[i]]=='object')
-			console.log(typeof players[$playing[i]]);
 			players[$playing[i]].stopVideo();
 		}
 	});
@@ -1098,28 +1029,28 @@ function returnYear($periodVal){
 		});
 	  };
 	})( jQuery );
-
+	
 	/*END NEW FUNCTIONS*/
-
-
+	
+	
+	
 	/* ===================== END FUNCTIONS ===================== */
-
-
+	
+	
 	/* ============================================================
 								DOCUMENT READY Fns
-	============================================================ */
-
+	============================================================ */	
+	
 	$(document).ready(function() {
-
 		// remember font size
 		$('html').css('font-size',localStorage['FSizePX']);
-
+				
 		// hide selector
 		$(document).on('mousedown','.bt-dropdown-toggle',function(){
 			if($(this).parent().hasClass('open')){
 				setTimeout(function(){
 					$('.open').parent().addClass('closed');
-					$('.open').parent().addClass('closedddd');
+					$('.open').parent().addClass('closedddd');					
 					$('.open').removeClass('open');
 				},300);
 			}
@@ -1130,8 +1061,8 @@ function returnYear($periodVal){
 				this.select();
 			}
 		});
-
-		$("input[name='custom[PHONE]'], input[id*='phone']").mask("+38099 999 99 99");
+		
+		$("#contact-phone , input[name='custom[PHONE]']").mask("+38099 999 99 99");	
 
 		/*============================================================
 						MOBILE BUGS REMOVE SETTINGS
@@ -1146,7 +1077,7 @@ function returnYear($periodVal){
 			)
 			document.querySelector('head').appendChild(msViewportStyle)
 		}
-
+		
 		//Android stock browser
 		$(function () {
 			var nua = navigator.userAgent
@@ -1155,9 +1086,9 @@ function returnYear($periodVal){
 				$('select.form-control').removeClass('form-control').css('width', '100%')
 			}
 		})
-
-
-
+		
+		
+		
 		//IE9 placeholder fallback
 		//credits http://www.hagenburger.net/BLOG/HTML5-Input-Placeholder-Fix-With-jQuery.html
 		if(!Modernizr.input.placeholder){
@@ -1181,9 +1112,9 @@ function returnYear($periodVal){
 				})
 			});
 		}
-
-
-
+		
+		
+		
 		/*equal height*/
 		equalHeight();
 		function equalHeight() {
@@ -1191,22 +1122,22 @@ function returnYear($periodVal){
 				$('.equal').matchHeight();
 			}
 		}
-
-
+		
+		
 		if ($('.lazy-img').exists() && $.fn.lazyload) {
 			$("img.lazy-img").lazyload({
 				effect : "fadeIn"
 			});
 		}
-
-
-
+		
+		
+		
 		/*parallax*/
 		if ($('.parallax').exists() && $.fn.parallax) {
 			$('.parallax').parallax();
 		}
-
-
+		
+		
 		// departments list / trigger to show openning hours
 		if ($('.open-hours-trigger').exists()) {
 			$('.open-hours-trigger').on('click', function(event){
@@ -1214,8 +1145,8 @@ function returnYear($periodVal){
 				$(this).toggleClass('active').parents().parent('.department-item-info').siblings('.department-opening-hours-table').toggleClass('is-visible');
 			});
 		}
-
-
+		
+		
 		/*
 		if ($.fn.checkBox) {
 			$('.checkbox').checkBox();
@@ -1223,12 +1154,12 @@ function returnYear($periodVal){
 		if ($.fn.radio) {
 			$('.radio').radio();
 		}
-		*/
+		*/	
 		if ($.fn.dropDown && $('.select-dropdown').exists()) {
 			$('.select-dropdown').dropDown({useNativeMobile: true});
 		}
-
-
+		
+		
 		/*
 		if (!Modernizr.touch) {
 			$("#main-menu > li").hover( function () {
@@ -1236,10 +1167,10 @@ function returnYear($periodVal){
 			});
 		}
 		*/
-
-
-
-
+		
+		
+		
+		
 		/*
 		$(document).ready(function () {
 			if ($.fn.keepTheRhythm ) {
@@ -1258,14 +1189,14 @@ function returnYear($periodVal){
 			}
         });
 		*/
-
-
-
+		
+		
+				
 		/*
-
+		
 		*/
-
-
+		
+		
 		// departments list / trigger to close alert
 		if ($('.alert-trigger').exists()) {
 			$('.alert-trigger').on('click', function(event){
@@ -1274,94 +1205,81 @@ function returnYear($periodVal){
 				alertBox.fadeOut(500);
 			});
 		}
-
-		if (window.matchMedia('(max-width:1100px)').matches) {
-			// var wdth = $(window).width();
-			// var newWdth;
-			// newWdth = wdth / 100 * 10;
-			$('.table-responsive').wrap('<div class="table-wrap"></div>');
-			// $('.table-wrap').css( 'margin-left', -newWdth);
-			// $('.table-wrap').css( 'margin-right', -newWdth);
-			// $('.table-responsive').css( 'margin-left', '-.625rem');
-			// $('.table-responsive').css( 'margin-right', '-.625rem');
-		}
-
-
+		
+		
 		//dropdown menu
 		custom_nav_menu();
-
+		
 		//masonry_menu();
-
+		
 		//font size change
 		change_fontSize();
-
+		
 		/*tabs*/
 		custom_tabs();
-
+		
 		/*tabs select*/
 		custom_tabs_select();
-
+		
 		//accordion
 		custom_accordion();
-
+		
 		//move currency nav in DOM
 		//currency_nav();
-
+		
 		//deposit slide box
 		slideBoxes();
-
+		
 		//custom popup
-		custom_popup();
-
+		custom_popup();		
+		
 		//custom slider
 		custom_sliders();
-
+		
 		// youtube video
 		//video_preload();
-
+		
 		//slick page nav
 		custom_page_nav();
-
+		
 		//sidebar
 		custom_sidebar();
-
+		
 		//FLOATING LABELS
 		custom_form_labels();
-
+		
 		//custom open card nav
 		custom_card_nav();
-
+		
 		//custom topNav settings
 		custom_top_nav();
-
+		
 		//custom language switcher settings
 		custom_lang_switch();
-
+		
 		//fixed credit form
 		custom_credit_form();
-
-        //custom open vip services
-        slideServices();
-
+				
+		
 		var dropdown = $('.dropdown-all').parent();
 		dropdown.hover( function(){custom_nav_menu(); });
-
-
+		
+		
 		/*NEW FUNCTIONS*/
-		//calculateCredit();
+		calculateCredit();
 		calculateCreditOnLoad();
-
+		
 		//resizeTitle();
 		/*NEW FUNCTION END*/
-
-
-
-
-
+		
+		
+		
+		
+		
 	});
-
+	
 	/* ===================== END Doc.Ready ===================== */
-
+			
 
 
 })(jQuery); // EOF
