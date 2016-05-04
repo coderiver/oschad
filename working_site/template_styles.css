@@ -328,20 +328,26 @@ table p { margin-bottom: 0;}
 .blue .form-label { color: #7196db;}
 
 .form-group { position: relative; margin-bottom: 1.5rem;}
-.form-control-label { display: block; max-width: 100%; font-size: 20px; font-weight: 400; color: #000000; margin-bottom: 0; cursor: text; position: absolute; top: 9px; left: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; -webkit-transition: transform 280ms linear, font-size 280ms linear; -moz-transition: transform 280ms linear, font-size 280ms linear; -ms-transition: transform 280ms linear, font-size 280ms linear; -o-transition: transform 280ms linear, font-size 280ms linear; transition: transform 280ms linear, font-size 280ms linear; /* -webkit-transition: top 0.2s ease 0s, left 0.2s ease 0s, font-size 0.2s ease 0s; -moz-transition: top 0.2s ease 0s, left 0.2s ease 0s, font-size 0.2s ease 0s; transition: top 0.2s ease 0s, left 0.2s ease 0s, font-size 0.2s ease 0s; */ }
+.form-control-label { display: block; max-width: 100%; font-size: 20px; font-weight: 400; color: #000000; margin-bottom: 0; cursor: text; position: absolute; top: 11px; left: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; -webkit-transition: transform 280ms linear, font-size 280ms linear; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -ms-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; transition: all .3s ease-in-out; }
 .form-row .form-control-label {left: 24px;}
 .sky-blue .form-control-label { color: #ffffff;}
 .light-blue .form-control-label.float { opacity: .5; }
 .form-control-label.float { color: inherit; font-size: 13px; top: -20px; }
 .form-row .form-control-label.float { left: .625rem;}
 
+.form-label-content { position: absolute; opacity: 0; top: 24px; right: 14px; font-size: 13px; white-space: nowrap; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -ms-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; transition: all .3s ease-in-out;}
+.form-control:focus ~ .form-label-content { opacity: 0; top: -20px; font-size: 13px; }
+
 .label-touch { display: inline-block; max-width: 100%; font-size: 13px; line-height: 1.1; opacity: .5; margin-bottom: 0;}
 .light-blue .label-touch { color: #ffffff;}
 
 @media only screen and (min-width: 1100px) {
+	.form-label-content {right: 103%;}
+	.form-control:focus ~ .form-label-content { opacity: 1; top: 14px; font-size: 13px; }
 	.form-group { margin-bottom: 1rem;}
+	.form-control-label.float { top: 0; opacity: 0; font-size: 20px; left: 14px;}
 	.form-control-label { max-width: none;}
-	.form-control-label.float { width: 200px; text-align: right; left: -200px; top: 14px; -webkit-transform: translate3d(-14px, 0, 0); -moz-transform: translate3d(-14px, 0, 0); -ms-transform: translate3d(-14px, 0, 0); -o-transform: translate3d(-14px, 0, 0); transform: translate3d(-14px, 0, 0); }
+	/*.form-control-label.float { width: 200px; text-align: right; left: -200px; top: 14px; -webkit-transform: translate3d(-14px, 0, 0); -moz-transform: translate3d(-14px, 0, 0); -ms-transform: translate3d(-14px, 0, 0); -o-transform: translate3d(-14px, 0, 0); transform: translate3d(-14px, 0, 0); }*/
 	.form-row .form-control-label.float.top {left: 1.8rem;}
 	.form-control-label.float.top { width: auto; text-align: left; left: 0; top: -20px; }
 	.label-touch { display: none;}
@@ -486,7 +492,7 @@ input[type="checkbox"]:checked + label::after { -webkit-animation: bounce 0.3s; 
 .bt-dropdown-toggle:focus,
 .bt-dropdown-toggle:visited { background-color: transparent; text-decoration: none; color: #000000;}
 .bt-dropdown-toggle { position: relative; display: block; width: 100%!important; height: 44px; line-height: 44px; padding: 0 34px 0 10px; text-decoration: none; text-align: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.no-touch .bt-dropdown-toggle {line-height: 40px;}
+.no-touch .bt-dropdown-toggle {line-height: 44px;}
 
 .bt-dropdown.open .bt-dropdown-toggle { color: rgba(0,0,0,.6);}
 .bt-dropdown-toggle span.icon::before,
@@ -4309,3 +4315,17 @@ ul.drop > li a[href$="xlsx"] { display: block;}
 }
 /*21.03.2016 END*/
 .order-inner .tabs-container-select .placeholder a{background-color: #fff;border: 2px solid #dcdf3c;padding:0px 32px;height:48px;line-height:44px;}
+
+/*25.04.2016*/
+/*
+@media (min-width:1100px){
+	.form-label-content {right: 103%;}
+}
+.form-control-label { display: block; max-width: 100%; font-size: 20px; font-weight: 400; color: #000000; margin-bottom: 0; cursor: text; position: absolute; top: 13px; left: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -ms-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; transition: all .3s ease-in-out;}
+
+.form-control-label.float { top: 0; opacity: 0; left: 14px; font-size: 20px;}
+
+.form-label-content { position: absolute; opacity: 0; top: 24px; right: 14px; font-size: 13px; white-space: nowrap; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -ms-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; transition: all .3s ease-in-out;}
+
+.form-control:focus ~ .form-label-content { opacity: 1; top: -14px; font-size: 13px; }
+*/

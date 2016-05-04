@@ -414,13 +414,13 @@ var $ = jQuery.noConflict();
 
 	/*sliders*/
 
-	function slideSwiper () {
+	// function slideSwiper () {
 		//initialize swiper when document ready
 		var mySwiper = new Swiper ('.swiper-container', {
 
 			// Optional parameters
 			direction: 'horizontal',
-			autoplay: 5000,
+			// autoplay: 5000,
 			speed: 1400,
 			autoplayDisableOnInteraction: false,
 			loop: true,
@@ -430,7 +430,14 @@ var $ = jQuery.noConflict();
 			pagination: '.swiper-pagination',
 			paginationClickable: true
 		})
-	}
+
+	// }
+
+	$('.swiper-container').hover(function () {
+		mySwiper.stopAutoplay();
+	}, function () {
+		mySwiper.startAutoplay();
+	});
 
 
 
@@ -1035,7 +1042,7 @@ var $ = jQuery.noConflict();
 		*/
 
 		//swiperJS
-		slideSwiper();
+		// slideSwiper();
 
 		//dropdown menu
 		custom_nav_menu();
